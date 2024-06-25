@@ -176,31 +176,27 @@ export class SendPayment extends withTwind()(BitcoinConnectElement) {
     }
 
     let externalMethods = null;
-    if (this.paymentMethods === 'all' || this.paymentMethods === 'external') {
-      externalMethods = html`
-        <div
-          class="flex flex-col items-center ${this.paymentMethods === 'external'
-            ? 'mt-8'
-            : ''}"
-        >
-          <p class="font-medium ${classes['text-neutral-secondary']}">
-            Scan to Pay
-          </p>
-          ${this.renderQR()}
-        </div>
-      `;
-    }
+    ////// Temporarily remove to prevent paying with other than Alby, till other wallets are supported
+    // if (this.paymentMethods === 'all' || this.paymentMethods === 'external') {
+    //   externalMethods = html`
+    //     <div
+    //       class="flex flex-col items-center ${this.paymentMethods === 'external'
+    //         ? 'mt-8'
+    //         : ''}"
+    //     >
+    //       <p class="font-medium ${classes['text-neutral-secondary']}">
+    //         Scan to Pay
+    //       </p>
+    //       ${this.renderQR()}
+    //     </div>
+    //   `;
+    // }
+    separator = null
 
     return html` ${internalMethods} ${separator} ${externalMethods} `;
   }
 
   private renderQR() {
-    ////// Temporarily inhibited to force user to connect to (Alby) wallet until all payment methods are supported.
-    if (this._showQR) {
-      return null
-    }
-    //////
-
     if (!this._showQR || !this.invoice) {
       return null;
     }
