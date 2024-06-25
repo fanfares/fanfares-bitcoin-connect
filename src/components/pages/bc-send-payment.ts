@@ -195,6 +195,12 @@ export class SendPayment extends withTwind()(BitcoinConnectElement) {
   }
 
   private renderQR() {
+    ////// Temporarily inhibited to force user to connect to (Alby) wallet until all payment methods are supported.
+    if (this._showQR) {
+      return null
+    }
+    //////
+
     if (!this._showQR || !this.invoice) {
       return null;
     }
