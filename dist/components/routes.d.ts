@@ -1,0 +1,21 @@
+import './bc-start.js';
+import './bc-navbar.js';
+import './pages/bc-help.js';
+import './pages/bc-nwc.js';
+import './pages/bc-mutiny.js';
+import './pages/bc-lnbits.js';
+import './pages/bc-umbrel.js';
+import './pages/bc-send-payment.js';
+import './pages/bc-new-wallet.js';
+import './pages/bc-lnfi.js';
+export declare const routes: {
+    '/start': import("lit-html").TemplateResult<1>;
+    '/help': import("lit-html").TemplateResult<1>;
+    '/nwc': import("lit-html").TemplateResult<1>;
+    '/lnfi': import("lit-html").TemplateResult<1>;
+    '/mutiny': import("lit-html").TemplateResult<1>;
+    '/lnbits': import("lit-html").TemplateResult<1>;
+    '/umbrel': import("lit-html").TemplateResult<1>;
+    '/new-wallet': import("lit-html").TemplateResult<1>;
+};
+export declare type Route = keyof typeof routes;
