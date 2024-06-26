@@ -1,6 +1,6 @@
 {
   "name": "fanfares-bitcoin-connect",
-  "version": "3.5.3",
+  "version": "3.5.4",
   "description": "Web components to connect to a lightning wallet and power a website with WebLN",
   "type": "module",
   "source": "src/index.ts",
@@ -44,7 +44,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rleed/fanfares-bitcoin-connect.git"
+    "url": "https://github.com/fanfares/fanfares-bitcoin-connect.git"
   },
   "dependencies": {
     "@getalby/lightning-tools": "^5.0.3",
