@@ -120,6 +120,7 @@ export class SendPayment extends withTwind()(BitcoinConnectElement) {
   private renderConnectWalletMobile() {
     let internalMethods = null;
     let externalMethods = null;
+    let deviceMethods = null;
     let qrSection = null;
 
     if (this.paymentMethods === 'all' || this.paymentMethods === 'internal') {
@@ -142,16 +143,23 @@ export class SendPayment extends withTwind()(BitcoinConnectElement) {
       }
     }
 
+    if (this.paymentMethods === 'all' || this.paymentMethods === 'external') {
+      deviceMethods = html`
+        <a href="lightning:${this.invoice}">
+          <bci-button variant="primary" block>
+            ${walletIcon} Open in a Bitcoin Wallet
+          </bci-button>
+        </a>
+      `;
+    }
+
+    ////// Temporarily removed to prevent paying with other than Alby, till other wallets are supported
+    externalMethods = null;
+    deviceMethods = null;
+  
     return html`
       <div class="mt-8 w-full flex flex-col gap-4">
-        ${this.paymentMethods === 'all' || this.paymentMethods === 'external'
-          ? html`<a href="lightning:${this.invoice}">
-              <bci-button variant="primary" block>
-                ${walletIcon} Open in a Bitcoin Wallet
-              </bci-button>
-            </a>`
-          : null}
-        ${internalMethods} ${externalMethods}
+        ${deviceMethods} ${internalMethods} ${externalMethods}
       </div>
       ${qrSection}
     `;

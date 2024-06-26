@@ -593,7 +593,7 @@ import{webln as t}from"@getalby/sdk";import{createStore as e}from"zustand/vanill
         ${0}
         <p class="${0}">Waiting for payment</p>
       </div>
-    `),Wn(`w-7 h-7 ${fn}`),bn)}renderConnectWalletMobile(){let t=null,e=null,n=null;return"all"!==this.paymentMethods&&"internal"!==this.paymentMethods||(t=at(pi||(pi=$i`
+    `),Wn(`w-7 h-7 ${fn}`),bn)}renderConnectWalletMobile(){let t=null,e=null,n=null,r=null;return"all"!==this.paymentMethods&&"internal"!==this.paymentMethods||(t=at(pi||(pi=$i`
         <bci-button block @click=${0}>
           <span class="-ml-0.5">${0}</span>Connect Wallet
         </bci-button>
@@ -601,17 +601,18 @@ import{webln as t}from"@getalby/sdk";import{createStore as e}from"zustand/vanill
         <bci-button block @click=${0}>
           ${0} Copy & Display Invoice
         </bci-button>
-      `),this._copyAndDisplayInvoice,si),this._showQR&&(n=this.renderQR())),at(fi||(fi=$i`
+      `),this._copyAndDisplayInvoice,si),this._showQR&&(r=this.renderQR())),"all"!==this.paymentMethods&&"external"!==this.paymentMethods||(n=at(fi||(fi=$i`
+        <a href="lightning:${0}">
+          <bci-button variant="primary" block>
+            ${0} Open in a Bitcoin Wallet
+          </bci-button>
+        </a>
+      `),this.invoice,oi)),e=null,n=null,at(gi||(gi=$i`
       <div class="mt-8 w-full flex flex-col gap-4">
-        ${0}
-        ${0} ${0}
+        ${0} ${0} ${0}
       </div>
       ${0}
-    `),"all"===this.paymentMethods||"external"===this.paymentMethods?at(gi||(gi=$i`<a href="lightning:${0}">
-              <bci-button variant="primary" block>
-                ${0} Open in a Bitcoin Wallet
-              </bci-button>
-            </a>`),this.invoice,oi):null,t,e,n)}renderConnectWalletDesktop(){let t=null;"all"!==this.paymentMethods&&"internal"!==this.paymentMethods||(t=at(mi||(mi=$i`
+    `),n,t,e,r)}renderConnectWalletDesktop(){let t=null;"all"!==this.paymentMethods&&"internal"!==this.paymentMethods||(t=at(mi||(mi=$i`
         <div class="${0}">
           <bci-button variant="primary" @click=${0}>
             <span class="-ml-0.5">${0}</span>
